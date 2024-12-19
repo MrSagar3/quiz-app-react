@@ -3,7 +3,7 @@ import Question from './Question';
 import Result from './Result';
 import { questions } from '../data/questions';
 
-const Quiz: React.FC = () => {
+const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
 
@@ -12,12 +12,10 @@ const Quiz: React.FC = () => {
       setScore(score + 1);
     }
 
-   
     if (currentQuestionIndex + 1 < questions.length) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      setCurrentQuestionIndex(questions.length); 
-      
+      setCurrentQuestionIndex(questions.length);
     }
   };
 

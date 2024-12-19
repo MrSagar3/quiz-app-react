@@ -2,18 +2,18 @@ import React from 'react';
 
 interface QuestionProps {
   question: string;
-  answers: any[];
-  onAnswerSelected: (answer: any) => void;
+  answers: string[] | number[];
+  onAnswerSelected: (answer: string | number) => void;
 }
 
-const Question: React.FC<QuestionProps> = ({ question, answers, onAnswerSelected }) => {
+const Question = ({ question, answers, onAnswerSelected }: QuestionProps) => {
   return (
     <div>
-      <h3>{question}</h3>
+      <h2>{question}</h2>
       <ul>
         {answers.map((answer, index) => (
-          <li key={index} onClick={() => onAnswerSelected(answer)}>
-            {answer}
+          <li key={index}>
+            <button onClick={() => onAnswerSelected(answer)}>{answer}</button>
           </li>
         ))}
       </ul>

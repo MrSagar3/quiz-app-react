@@ -6,7 +6,7 @@ interface ResultProps {
   onRestart: () => void;
 }
 
-const Result: React.FC<ResultProps> = ({ score, totalQuestions, onRestart }) => {
+const Result = ({ score, totalQuestions, onRestart }: ResultProps) => {
   return (
     <div>
       <h2>Your Score: {score}/{totalQuestions}</h2>
